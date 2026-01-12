@@ -17,7 +17,7 @@ if [ "$IS_RUNNING" != "true" ]; then
     LABEL_DRAWING="off"
 else
     # Get Slack notification count from dock badge
-    BADGE=$(gtimeout 1 osascript "$PLUGIN_DIR/slack_query_open.applescript" 2>/dev/null)
+    BADGE=$(gtimeout 1 osascript "$PLUGIN_DIR/slack_query_badge.applescript" 2>/dev/null)
 
     # Handle "missing value" case (no notifications)
     if [ "$BADGE" = "missing value" ] || [ -z "$BADGE" ]; then
