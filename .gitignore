@@ -1,0 +1,10 @@
+# Ignore all files by default
+*
+
+# Allow directories to be traversed
+!*/
+
+# Include
+!sketchybar/**
+!aerospace/**
+!.gitignore
