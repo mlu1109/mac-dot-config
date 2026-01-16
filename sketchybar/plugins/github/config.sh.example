@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Configuration for GitHub PR review plugin
+
+# Space-separated list of repositories to ignore (format: owner/repo)
+# Example: IGNORED_REPOS="org/repo1 org/repo2"
+IGNORED_REPOS=""
+
+# Delimiter for title replacement patterns (default: :::)
+# Choose a delimiter that won't appear in your regex patterns
+DELIM=":::"
+
+# PR title transformations (optional)
+# Array of sed replacement patterns to apply to PR titles
+# Format: "pattern${DELIM}replacement${DELIM}flags"
+# Leave empty to disable transformations
+TITLE_REPLACEMENTS=(
+    # Example: Replace ticket ID with an icon
+    # "[Tt][Ii][Cc][Kk][Ee][Tt]-[0-9]+${DELIM}🎫${DELIM}g"
+
+    # Example: Remove conventional commit prefixes (empty replacement)
+    # "(feat|fix|chore|docs|style|refactor|perf|test|build|ci|revert)(\([^)]*\))?:\s*${DELIM}${DELIM}i"
+)
+
+# Maximum title length before truncation (default: 20)
+MAX_TITLE_LENGTH=20
