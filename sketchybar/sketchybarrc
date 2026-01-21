@@ -111,6 +111,8 @@ sketchybar \
             --add item battery right \
             --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
             --subscribe battery system_woke power_source_change \
+            --add item calendar right \
+            --set calendar update_freq=60 script="$PLUGIN_DIR/calendar/calendar.sh" \
             --add item gmail right \
             --set gmail update_freq=20 script="$CONFIG_DIR/plugins/gmail.sh" click_script="open $HOME/Applications/Gmail.app" \
             --add item slack right \
