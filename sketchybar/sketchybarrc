@@ -116,7 +116,7 @@ sketchybar \
             --add item gmail right \
             --set gmail update_freq=20 script="$CONFIG_DIR/plugins/gmail.sh" click_script="open $HOME/Applications/Gmail.app" \
             --add item slack right \
-            --set slack update_freq=20 script="$CONFIG_DIR/plugins/slack.sh" click_script="open /Applications/Slack.app" \
+            --set slack update_freq=20 script="$CONFIG_DIR/plugins/slack/slack.sh" click_script="open /Applications/Slack.app" \
             --add item github_pr_rq right \
             --set github_pr_rq update_freq=120 script="$CONFIG_DIR/plugins/github/review_requests.sh"
 ##### Force all scripts to run the first time (never do this in a script) #####

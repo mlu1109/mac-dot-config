@@ -2,14 +2,14 @@
 
 # Source colors
 source "$CONFIG_DIR/colors.sh"
-PLUGIN_DIR="$CONFIG_DIR/plugins"
+SLACK_PLUGIN_DIR="$CONFIG_DIR/plugins/slack"
 
 # Set icon
 ICON="󰒱"  # Slack icon from Nerd Fonts
 
 # Check if Slack is running
-IS_RUNNING=$(gtimeout 1 osascript "$PLUGIN_DIR/slack_query_open.applescript" 2>/dev/null)
-
+IS_RUNNING=$(gtimeout 1 osascript "$SLACK_PLUGIN_DIR/slack_query_open.applescript" 2>/dev/null)
+echo $IS_RUNNING
 if [ "$IS_RUNNING" != "true" ]; then
     # Slack is not running - grey it out
     COLOR="$COLOR_GREY"
@@ -17,7 +17,7 @@ if [ "$IS_RUNNING" != "true" ]; then
     LABEL_DRAWING="off"
 else
     # Get Slack notification count from dock badge
-    BADGE=$(gtimeout 1 osascript "$PLUGIN_DIR/slack_query_badge.applescript" 2>/dev/null)
+    BADGE=$(gtimeout 1 osascript "$SLACK_PLUGIN_DIR/slack_query_badge.applescript" 2>/dev/null)
 
     # Handle "missing value" case (no notifications)
     if [ "$BADGE" = "missing value" ] || [ -z "$BADGE" ]; then
